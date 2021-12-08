@@ -16,3 +16,11 @@ Sam Newman
 According to the [OASIS definition], a service is a mechanism that enables access to one or more capabilities, where the access is provided using a prescribed interface and is exercised consistent with constraints and policies as specified by the service description. 
 
 In our case, these capabilities might be executing commands, querying, or raising events. All of them make up a service’s public interface.
+
+## Representation
+
+Microservices is an architectural style that structures an application as a collection of small autonomous services, modeled around a business domain.
+
+![Microservices Representation](img/fig-01.png?raw=true "Microservices Representation")
+
+In the given Architecture, each service is self-contained and implements a single business capability.

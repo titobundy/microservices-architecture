@@ -79,3 +79,64 @@ Horizontal scaling (X-axis) is a common way to scale a monolithic application. Y
 ## Monolithics vs Microservices
 
 ![Differences](img/fig-04.jpg?raw=true "Differences between Monolithics and Microservices Architectures")
+
+## Microservices
+
+### Why Microservices ?
+
+Building Microservices allows us the opportunity to tackle software complexity and deliver faster; if (and it’s a big if) we build our services right: choosing the right tech, interfaces, and integration patterns.
+
+Microservices are a way of breaking down applications into their parts so that businesses can deliver the components separately, experiment with distinct technology stacks, and create clear boundaries between business logic.
+
+But building microservices isn’t easy an easy task. With microservices, you need to consider many things, such as how (and where) you split the services, how they talk to each other (integration), and what data they share.
+
+### Microservices Architecture
+
+Within a microservices architecture, the entire functionality is split up into independently deployable modules which communicate with each other through defined methods called APIs (Application Programming Interfaces). Each service covers its own scope and can be updated, deployed, and scaled independently.
+
+The microservice architecture enables the rapid, frequent and reliable delivery of large, complex applications. It also enables an organization to evolve its technology stack.
+
+![Architecture](img/fig-05.png?raw=true "Architecture")
+
+- Different clients from different devices try to use different services like search, build, configure and other management capabilities.
+
+- All the services are separated based on their domains and functionalities and  are further allotted to individual microservices.
+
+- These microservices have their own load balancer and execution environment to execute their functionalities & at the same time captures data in their own databases.
+
+- All the microservices communicate with each other through a stateless server which is either REST or Message Bus.
+
+- Microservices know their path of communication with the help of Service Discovery and perform operational capabilities such as automation, monitoring.
+
+- Then all the functionalities performed by microservices are communicated to clients via API Gateway.
+
+- All the internal points are connected from the API Gateway. So, anybody who connects to the API Gateway automatically gets connected to the complete system.
+
+### Principles
+
+By Sam Newman
+
+![Principles Sam Newman](img/fig-06-a.png?raw=true "Principles Sam Newman")
+
+- Model around a business domain, provides stable APIs.
+- Decentralize, allows agility.
+- Embrace automation, allows scalability at speed.
+- Hide implementation details, allows evolution.
+- Deploy independently, allows agility and availability.
+- Consumer first, provides useful services.
+- Isolate failure, allows availability.
+- Highly observable, provides maintainability.
+
+![Principles](img/fig-06-b.png?raw=true "Principles")
+
+- Decoupling – Services within a system are largely decoupled. So the application as a whole can be easily built, altered, and scaled.
+- Componentization – Microservices are treated as independent components that can be easily replaced and upgraded.
+- Business Capabilities – Microservices are very simple and focus on a single capability.
+- Autonomy – Developers and teams can work independently of each other, thus increasing speed.
+- Continous Delivery – Allows frequent releases of software, through systematic automation of software creation, testing, and approval.
+- Responsibility – Microservices do not focus on applications as projects. Instead, they treat applications as products for which they are responsible.
+- Decentralized Governance – The focus is on using the right tool for the right job. That means there is no standardized pattern or any technology pattern. Developers have the freedom to choose the best useful tools to solve their problems.
+- Agility – Any new feature can be quickly developed and discarded again.
+
+
+

@@ -116,16 +116,18 @@ The microservice architecture enables the rapid, frequent and reliable delivery 
 
 By Sam Newman
 
-![Principles Sam Newman](img/fig-06-a.png?raw=true "Principles Sam Newman")
+![Principles Sam Newman](img/fig-06.png?raw=true "Principles Sam Newman")
 
-- Model around a business domain, provides stable APIs.
-- Decentralize, allows agility.
-- Embrace automation, allows scalability at speed.
-- Hide implementation details, allows evolution.
-- Deploy independently, allows agility and availability.
-- Consumer first, provides useful services.
-- Isolate failure, allows availability.
-- Highly observable, provides maintainability.
+- Modelled Around Business Domain: Provides more stables api. Services should represent a bounded context within the domain.
+
+- Culture of Automatization: Allows scalability at speed.
+- Hide Implementation Details: Evolution, allows one service evolve independently of another.
+- Decentralise All the Things: Allows agility.
+- Deploy Independently: Allows agility and availability.
+- Consumer First: Provides useful services. Services exist to be called so they should be built outside in rather than inside out.
+- Isolate Failure: Allows availability. Failure in one service should not have a cascading effect.
+- Highly Observable: Provides maintainability.
+
 
 ![Principles](img/fig-06-b.png?raw=true "Principles")
 

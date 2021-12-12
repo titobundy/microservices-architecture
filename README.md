@@ -130,14 +130,41 @@ The microservice architecture enables the rapid, frequent and reliable delivery 
 
 ![Features](img/fig-06-b.png?raw=true "Features")
 
-- Decoupling – Services within a system are largely decoupled. So the application as a whole can be easily built, altered, and scaled.
-- Componentization – Microservices are treated as independent components that can be easily replaced and upgraded.
-- Business Capabilities – Microservices are very simple and focus on a single capability.
-- Autonomy – Developers and teams can work independently of each other, thus increasing speed.
-- Continous Delivery – Allows frequent releases of software, through systematic automation of software creation, testing, and approval.
-- Responsibility – Microservices do not focus on applications as projects. Instead, they treat applications as products for which they are responsible.
-- Decentralized Governance – The focus is on using the right tool for the right job. That means there is no standardized pattern or any technology pattern. Developers have the freedom to choose the best useful tools to solve their problems.
-- Agility – Any new feature can be quickly developed and discarded again.
+- Decoupling: Services within a system are largely decoupled. So the application as a whole can be easily built, altered, and scaled.
+- Componentization: Microservices are treated as independent components that can be easily replaced and upgraded.
+- Business Capabilities: Microservices are very simple and focus on a single capability.
+- Autonomy: Developers and teams can work independently of each other, thus increasing speed.
+- Continous Delivery: Allows frequent releases of software, through systematic automation of software creation, testing, and approval.
+- Responsibility: Microservices do not focus on applications as projects. Instead, they treat applications as products for which they are responsible.
+- Decentralized Governance: The focus is on using the right tool for the right job. That means there is no standardized pattern or any technology pattern. Developers have the freedom to choose the best useful tools to solve their problems.
+- Agility: Any new feature can be quickly developed and discarded again.
+
+### Advantages Of Microservices
+
+![Benefits](img/fig-07.png?raw=true "Benefits")
+
+- Independent Development: All microservices can be easily developed based on their individual functionality.
+- Independent Deployment: Based on their services, they can be individually deployed in any application.
+- Fault Isolation: Even if one service of the application does not work, the system still continues to - function.
+- Mixed Technology Stack: Different languages and technologies can be used to build different services of the same application.
+- Granular Scaling:  Individual components can scale as per need, there is no need to scale all components together.
+
+Other Benefits:
+- Better development scaling.
+- Higher development velocity.
+- Supports iterative or incremental modernization.
+- Take advantage of the modern Software - Development Ecosystem (Cloud, Containers, - DevOps, Serverless).
+- Supports horizontal scaling and granular scaling.
+- It puts low cognitive complexity on the - developer’s head thanks to its smaller size.
+
+### Challenges of Microservices Architecture
+
+![Challenges](img/fig-08.png?raw=true "Challenges")
+
+- Difficult integration testing: Independent services within a microservices-based application may be tested in different environments.
+- Operational Complexity: Management of multiple databases and transactions can be really cumbersome. The problem of operational complexity may be partially solved by the implementation of new configuration management tools (e.g. Docker, Ansible).
+- Network problems and latency: So since microservice are small and communicate with inter-service communication, we should manage network problems. If we call chain of services for particular request, this will increate latency problems and need correct design to APIs for proper communication.
+- Data Integrity: Maintaining strong consistency is extremely difficult for a distributed system, which means everyone has to manage eventual consistency.
 
 
 

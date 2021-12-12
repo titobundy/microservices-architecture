@@ -112,9 +112,7 @@ The microservice architecture enables the rapid, frequent and reliable delivery 
 
 - All the internal points are connected from the API Gateway. So, anybody who connects to the API Gateway automatically gets connected to the complete system.
 
-### Principles
-
-By Sam Newman
+### Principles by Sam Newman
 
 ![Principles Sam Newman](img/fig-06.png?raw=true "Principles Sam Newman")
 
@@ -128,8 +126,9 @@ By Sam Newman
 - Isolate Failure: Allows availability. Failure in one service should not have a cascading effect.
 - Highly Observable: Provides maintainability.
 
+### Features
 
-![Principles](img/fig-06-b.png?raw=true "Principles")
+![Features](img/fig-06-b.png?raw=true "Features")
 
 - Decoupling – Services within a system are largely decoupled. So the application as a whole can be easily built, altered, and scaled.
 - Componentization – Microservices are treated as independent components that can be easily replaced and upgraded.

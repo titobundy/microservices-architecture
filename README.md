@@ -167,4 +167,39 @@ Other Benefits:
 - Data Integrity: Maintaining strong consistency is extremely difficult for a distributed system, which means everyone has to manage eventual consistency.
 
 
+## Design Patterns for Microservices
 
+Applying all these principles brings several challenges and issues. Those can overcome with using correct and matching design patterns. Let's discuss those problems and their solutions.
+
+There are design patterns for microservices and those can divide into five Patterns
+
+![categories](img/fig-09.png?raw=true "categories")
+
+### Decomposition Patterns
+
+- By Business Capability
+- By Subdomain
+- Strangler Fig Pattern
+- BranchByAbstraction
+
+### Microservices Communications
+
+- Sync/Async Communication
+- Api Gateway Pattern
+
+### Database Managment
+
+- Database per Service
+- Saga Pattern
+
+### Best Practices
+
+- Design
+- Hardcoded values
+- Logging
+- Versioning
+- Authorization and authentication mechanism
+- Dependency
+- Make executable contracts
+- Fault tolerance
+- Documentation

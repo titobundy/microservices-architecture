@@ -177,7 +177,31 @@ There are design patterns for microservices and those can divide into five Patte
 
 ### Decomposition Patterns
 
-- By Business Capability
+How to decompose the application into services?
+
+Another challenge is deciding how to partition the system into microservices. This is very much an art, but there are a number of strategies that can help:
+
+- Decompose by business capability and define services corresponding to business capabilities.
+- Decompose by domain-driven design subdomain.
+- Decompose by verb or use case and define services that are responsible for particular actions. e.g. a Shipping Service that’s responsible for shipping complete orders.
+- Decompose by by nouns or resources by defining a service that is responsible for all operations on entities/resources of a given type. e.g. an Account Service that is responsible for managing user accounts.
+
+Ideally, each service should have only a small set of responsibilities. (Uncle) Bob Martin talks about designing classes using the Single Responsibility Principle (SRP). The SRP defines a responsibility of a class as a reason to change, and states that a class should only have one reason to change. It make sense to apply the SRP to service design as well.
+
+Another analogy that helps with service design is the design of Unix utilities. Unix provides a large number of utilities such as grep, cat and find. Each utility does exactly one thing, often exceptionally well, and is intended to be combined with other utilities using a shell script to perform complex tasks.
+
+---
+
+- **By Business Capability**
+
+    - Define services corresponding to business capabilities.
+    - A business capability is a concept from business architecture modeling.
+    - A business service should generate value.
+
+![decomposition-by-bussiness](img/fig-10.png?raw=true "decomposition-by-bussiness")
+
+---
+
 - By Subdomain
 - Strangler Fig Pattern
 - BranchByAbstraction

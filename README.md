@@ -197,13 +197,43 @@ Another analogy that helps with service design is the design of Unix utilities. 
     - Define services corresponding to business capabilities.
     - A business capability is a concept from business architecture modeling.
     - A business service should generate value.
+    - A business capability often corresponds to a business object, e.g.
 
 ![decomposition-by-bussiness](img/fig-10.png?raw=true "decomposition-by-bussiness")
 
 ---
 
-- By Subdomain
-- Strangler Fig Pattern
+- **By Subdomain**
+
+    - This pattern uses a domain-driven design (DDD) subdomain to decompose monoliths.
+    - DDD refers to the application’s problem space - the business - as the domain. 
+    - Define services corresponding to Domain-Driven Design (DDD) subdomains.
+    - A domain is consists of multiple subdomains. Each subdomain corresponds to a different part of the business.
+    - Each subdomain has a model and the scope of that model is called a bounded context; microservices are developed around this bounded context.
+    
+![decomposition-by-subdomain](img/fig-11.png?raw=true "decomposition-by-subdomain")    
+
+Decomposition Microservices Architecture Path
+
+![decomposition-by-subdomain-steps](img/fig-12.png?raw=true "decomposition-by-subdomain-steps")   
+
+---
+
+- **Strangler Fig Pattern**
+
+Incrementally migrate a legacy system by gradually replacing specific pieces of functionality with new applications and services. As features from the legacy system are replaced, the new system eventually replaces all of the old system's features, strangling the old system and allowing you to decommission it.
+
+![decomposition-by-strangler-analogy](img/fig-13-b.jpg?raw=true "decomposition-by-strangler-analogy")
+
+The strangler application consists of two types of services: 
+
+    - First, there are services that implement functionality that previously resided in the monolith.
+    - Second, there are services that implement new features. The latter are particularly useful since they demonstrate to the business the value of using microservices.
+
+![decomposition-by-strangler](img/fig-13.jpeg?raw=true "decomposition-by-strangler") 
+
+---
+
 - BranchByAbstraction
 
 ### Microservices Communications

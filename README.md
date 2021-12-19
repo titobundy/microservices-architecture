@@ -225,10 +225,10 @@ Incrementally migrate a legacy system by gradually replacing specific pieces of 
 
 ![decomposition-by-strangler-analogy](img/fig-13-b.jpg?raw=true "decomposition-by-strangler-analogy")
 
-The strangler application consists of two types of services: 
+The strangler application consists of two types of services:
 
-    - First, there are services that implement functionality that previously resided in the monolith.
-    - Second, there are services that implement new features. The latter are particularly useful since they demonstrate to the business the value of using microservices.
+- First, there are services that implement functionality that previously resided in the monolith.
+- Second, there are services that implement new features. The latter are particularly useful since they demonstrate to the business the value of using microservices.
 
 ![decomposition-by-strangler](img/fig-13.jpeg?raw=true "decomposition-by-strangler") 
 

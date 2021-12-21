@@ -238,7 +238,22 @@ The strangler application consists of two types of services:
 
 ### Microservices Communications
 
-- Sync/Async Communication
+![communication](img/fig-14.png?raw=true "communication") 
+
+- **Synchronous communication**
+
+Synchronous communication is the most straightforward solution when trying to make services communicate. Like a phone call, the client sends a request and waits for a response to come back.
+
+A synchronous request is considered blocking: the response is needed for the process to continue. If you don’t answer the phone, the person calling you will not be able to continue.
+
+Most synchronous communication technologies are built around HTTP, including examples like gRPC, REST or GraphQL.
+
+- **Asynchronous communication**
+
+With asynchronous communication, a middleman is added to our infrastructure between services. Each interaction between services acts as a text message we would receive on our phone. As opposed to a phone call, we don’t need to answer it directly.
+
+There are two fundamental different ways to work with asynchronous communication:  Message Queue, Message Broker.
+
 - Api Gateway Pattern
 
 ### Database Managment

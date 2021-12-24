@@ -238,6 +238,8 @@ The strangler application consists of two types of services:
 
 Pending
 
+---
+
 ### Microservices Communications
 
 ![communication](img/fig-14.png?raw=true "communication") 
@@ -291,6 +293,8 @@ API gateway consolidates the edge functionalities rather than making every micro
 
 
 ![api gateway](img/fig-15-b.jpg?raw=true "api gateway")
+
+- **Backend for Frontend (BFF) pattern**
 
 A variation of this pattern is the Backends for frontends pattern. It defines a separate API gateway for each kind of client.
 

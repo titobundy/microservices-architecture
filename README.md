@@ -192,7 +192,7 @@ Another analogy that helps with service design is the design of Unix utilities. 
 
 ---
 
-- **By Business Capability**
+####  **By Business Capability**
 
     - Define services corresponding to business capabilities.
     - A business capability is a concept from business architecture modeling.
@@ -203,7 +203,7 @@ Another analogy that helps with service design is the design of Unix utilities. 
 
 ---
 
-- **By Subdomain**
+#### **By Subdomain**
 
     - This pattern uses a domain-driven design (DDD) subdomain to decompose monoliths.
     - DDD refers to the application’s problem space - the business - as the domain. 
@@ -219,7 +219,7 @@ Decomposition Microservices Architecture Path
 
 ---
 
-- **Strangler Fig Pattern**
+#### **Strangler Fig Pattern**
 
 Incrementally migrate a legacy system by gradually replacing specific pieces of functionality with new applications and services. As features from the legacy system are replaced, the new system eventually replaces all of the old system's features, strangling the old system and allowing you to decommission it.
 
@@ -234,13 +234,15 @@ The strangler application consists of two types of services:
 
 ---
 
-- BranchByAbstraction
+#### BranchByAbstraction
+
+Pending
 
 ### Microservices Communications
 
 ![communication](img/fig-14.png?raw=true "communication") 
 
-- **Synchronous communication**
+####  **Synchronous communication**
 
 Synchronous communication is the most straightforward solution when trying to make services communicate. Like a phone call, the client sends a request and waits for a response to come back.
 
@@ -248,13 +250,13 @@ A synchronous request is considered blocking: the response is needed for the pro
 
 Most synchronous communication technologies are built around HTTP, including examples like gRPC, REST or GraphQL.
 
-- **Asynchronous communication**
+####  **Asynchronous communication**
 
 With asynchronous communication, a middleman is added to our infrastructure between services. Each interaction between services acts as a text message we would receive on our phone. As opposed to a phone call, we don’t need to answer it directly.
 
 There are two fundamental different ways to work with asynchronous communication:  Message Queue, Message Broker.
 
-- Api Gateway Pattern
+#### Api Gateway Pattern
 
 Different loosely coupled services are deployed based upon their own specific needs where each service has its fine-grained APIs model to serve different clients (Web, Mobile, and 3rd party APIs).
 
@@ -272,7 +274,7 @@ An API gateway is middleware that sits between an API endpoint and backend servi
 
 Acting as a reverse proxy routing request from the client to the server
 
-**Functionalities**
+- **Functionalities**
 
 Routing: It provides a single entry point to the APIs encapsulating the underlying system architecture which is called API Gateway.
 

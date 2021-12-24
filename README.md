@@ -256,6 +256,44 @@ There are two fundamental different ways to work with asynchronous communication
 
 - Api Gateway Pattern
 
+Different loosely coupled services are deployed based upon their own specific needs where each service has its fine-grained APIs model to serve different clients (Web, Mobile, and 3rd party APIs).
+
+- **Directly communicating**
+
+![directly communication](img/fig-15-a.png?raw=true "directly communication") 
+
+- Multiple server round trips in order to fulfill the request.
+- Diverse communication protocol (such as gRpc, thrift, REST, AMQP e.t.c)
+- Common gateway functionalities (such as authentication, authorization, logging) have to be implemented in each microservice.
+
+- **API Gateway**
+
+An API gateway is middleware that sits between an API endpoint and backend services, transmitting client requests to an appropriate service of an application.
+
+Acting as a reverse proxy routing request from the client to the server
+
+**Functionalities**
+
+Routing: It provides a single entry point to the APIs encapsulating the underlying system architecture which is called API Gateway.
+
+Offloading:
+
+API gateway consolidates the edge functionalities rather than making every microservices implementing them:
+
+    - Authentication and authorization.
+    - Service discovery integration.
+    - Load balancing.
+    - Log tracing and aggregation.
+    - Rate limiting.
+    - IP whitelisting
+
+
+![api gateway](img/fig-15-b.jpg?raw=true "api gateway")
+
+A variation of this pattern is the Backends for frontends pattern. It defines a separate API gateway for each kind of client.
+
+![bff](img/fig-15-c.png?raw=true "bff") 
+
 ### Database Managment
 
 - Database per Service

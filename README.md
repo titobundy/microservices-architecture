@@ -58,8 +58,8 @@ One codebase
 - Easier debugging and testing: end-to-end testing much faster
 Deployment
 - One application to replace: Do not have to handle many deployments, just one file or directory.
-- Less cross-cutting concerns: such as logging, handling, caching, and performance monitoring
-Monoliths are not “wrong
+- Less cross-cutting concerns: such as logging, handling, caching, and performance monitoring.
+Monoliths are not "wrong".
 
 ### Limitations of Monolithic Architecture
 

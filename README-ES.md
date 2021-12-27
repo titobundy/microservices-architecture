@@ -56,17 +56,17 @@ Estas aplicaciones suelen utilizar arquitecturas escalonadas (por ejemplo, prese
 
 **Limitations**
 
-**Inflexible**: Es extremadamente problemático aplicar una nueva tecnología en una aplicación monolítica porque entonces toda la aplicación tiene que ser reescrita.
+- **Inflexible**: Es extremadamente problemático aplicar una nueva tecnología en una aplicación monolítica porque entonces toda la aplicación tiene que ser reescrita.
 
-**No confiable**: Un error en algún punto del sistema significa que todo el sistema puede fallar en un segundo (Resiliency).
+- **No confiable**: Un error en algún punto del sistema significa que todo el sistema puede fallar en un segundo (Resiliency).
 
-**No escalable**: Escala (escalamiento horizontal) clonando la aplicación en varios servidores/máquinas virtuales/contenedores. No se pueden escalar componentes de forma independiente, solo toda la aplicación. El escalamiento vertical tiene limitaciones y es más costoso.
+- **No escalable**: Escala (escalamiento horizontal) clonando la aplicación en varios servidores/máquinas virtuales/contenedores. No se pueden escalar componentes de forma independiente, solo toda la aplicación. El escalamiento vertical tiene limitaciones y es más costoso.
 
-**Bloquea el desarrollo continuo**: Limita la agilidad en el sentido de que muchas características de las aplicaciones no se pueden construir e implementar al mismo tiempo. Por otro lado cualquier cambio por pequeño que sea requiere el re-despliegue de toda la aplicación.
+- **Bloquea el desarrollo continuo**: Limita la agilidad en el sentido de que muchas características de las aplicaciones no se pueden construir e implementar al mismo tiempo. Por otro lado cualquier cambio por pequeño que sea requiere el re-despliegue de toda la aplicación.
 
-**Desarrollo lento**: El desarrollo en aplicaciones monolíticas requiere mucho tiempo para construirse, ya que todas y cada una de las funciones deben construirse una tras otra, las reparaciones son lentas y costosas . Por otro lado tenemos un solo gran código fuente, lo que sobrecarga los IDES y ralentiza los tiempos de inicio de la aplicación.
+- **Desarrollo lento**: El desarrollo en aplicaciones monolíticas requiere mucho tiempo para construirse, ya que todas y cada una de las funciones deben construirse una tras otra, las reparaciones son lentas y costosas . Por otro lado tenemos un solo gran código fuente, lo que sobrecarga los IDES y ralentiza los tiempos de inicio de la aplicación.
 
-**No apto para aplicaciones complejas**: Son un reto de crecimiento y el cambio. Si la aplicación crece en complejidad, en líneas de código y en el número de características, es más riesgoso y costoso efectuar cambios, las características de las aplicaciones complejas tienen dependencias estrechamente acopladas.
+- **No apto para aplicaciones complejas**: Son un reto de crecimiento y el cambio. Si la aplicación crece en complejidad, en líneas de código y en el número de características, es más riesgoso y costoso efectuar cambios, las características de las aplicaciones complejas tienen dependencias estrechamente acopladas.
 
 
 **Why Microservices?**
@@ -137,10 +137,10 @@ Uso de herramientas de monitoreo y analisis de: logs, recursos, trafico, metrica
 
 Otros Beneficios:
 
-Mayor velocidad de desarrollo
-Soporte al desarrollo iterativo/incremental.
-Aprovecha las ventajas del software moderno - Ecosistema de desarrollo (Cloud, Containers, DevOps, Serverless).
-Equipos flexibles, los diferentes microservicios requieren diferentes equipos de desarrolladores, tanto en tamaño como en estructura.
+- Mayor velocidad de desarrollo
+- Soporte al desarrollo iterativo/incremental.
+- Aprovecha las ventajas del software moderno - Ecosistema de desarrollo (Cloud, Containers, DevOps, Serverless).
+- Equipos flexibles, los diferentes microservicios requieren diferentes equipos de desarrolladores, tanto en tamaño como en estructura.
 
 
 

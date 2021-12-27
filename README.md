@@ -52,13 +52,16 @@ These applications usually use tiered architectures (e.g. presentation, business
 ### Benefits of Monolithic Architecture
 
 Simplicity
+
 One codebase
 - Simply to develop
 - Easy to find things
 - Easier debugging and testing: end-to-end testing much faster
+
 Deployment
 - One application to replace: Do not have to handle many deployments, just one file or directory.
 - Less cross-cutting concerns: such as logging, handling, caching, and performance monitoring.
+
 Monoliths are not "wrong".
 
 ### Limitations of Monolithic Architecture

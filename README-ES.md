@@ -46,7 +46,7 @@ Una aplicación monolítica tiene la mayor parte de su funcionalidad dentro de u
 Estas aplicaciones suelen utilizar arquitecturas escalonadas (por ejemplo, presentación, lógica empresarial, capa de datos) y modularización interna.
 
 
-**Beneficios**
+**Benefits**
 
 - Fácil de desarrollar.
 - Fácil encontrar cosas debido a un unico codigo
@@ -101,14 +101,48 @@ Los principios de arquitectura existen por una razón, que es conseguir los obje
 
 La razon de estos principios es lograr construir pequeños servicios que sean autonomos.
 
-- **Modeled Around Business Domain:** Proporcionan APIs más estable. Los servicios deben representar un contexto delimitado dentro del dominio. (Decomposition by subdomain)
-- **Culture of Automatization:** Permite la escalabilidad a gran velocidad. Deberia
+- **Modeled Around Business Domain:** Proporcionan APIs más estable. Los servicios deben representar un contexto delimitado dentro del dominio. DDD es una herramienta para la division correcta (Decomposition by subdomain)
+La historia ha demostrado que las interfaces estructuradas en torno a contextos delimitados por negocios son más estables que aquellas estructuradas en torno a conceptos técnicos.
+
+- **Culture of Automatization:** Permite la escalabilidad a gran velocidad. Los microservicios agregan mucha complejidad, adoptar una cultura de automatización es una forma clave de abordar esto. Normalmente se adopta un enfoque Devops con CI/CD.
+Las prácticas de desarrollo tales como: la automatización de pruebas, despliegue automatizado y la administración de la configuración, permiten que el sistema empresarial se escale de manera más eficiente y también mejore la coordinación de servicios.
+
 - **Hide Implementation Details:** Permite que un servicio evolucione independientemente de otro. (Database per service)
-- **Decentralise All the Things:** Permite agilidad.
-- **Deploy Independently:** Permite agilidad y disponibilidad. Debería poder cambiar un servicio y desplegarlo sin tener que realizar cambios en ningún otro servicio.
+Para maximizar la capacidad de un servicio para evolucionar independientemente de cualquier otro, es vital que ocultemos los detalles de implemebntacion, esto es esencial para mantener un bajo acoplamiento entre los servicios que interactúan en una aplicación empresarial.
+
+- **Decentralise All the Things:** Permite agilidad. Este principio se basa en el requisito de que los servicios individuales deben desarrollarse, gestionarse y mantenerse de forma autónoma. Delegar la toma de decisiones y control a los equipos dueños de los microservicios.
+
+- **Deploy Independently:** Permite agilidad y disponibilidad. Es uno de los principios mas importantes, debería poder cambiar un servicio y desplegarlo sin tener que realizar cambios en ningún otro servicio.
+
 - **Consumer First:** Proporciona servicios útiles. Los servicios existen para ser llamados, por lo que deben construirse de afuera hacia adentro en lugar de adentro hacia afuera.
+
 - **Isolate Failure:** Permite disponibilidad. La falla en un servicio no debería tener un efecto en cascada. (circuit breakers)
-- **Highly Observable:** Proporciona mantenibilidad. Uso de herramientas de monitoreo y analisis de logs, infraestructura, metricas.
+
+- **Highly Observable:** Proporciona mantenibilidad. 
+Una parte importante de la gestión del ciclo de vida de las aplicaciones es el monitoreo. En el caso de los microservicios, debido a su naturaleza distribuida, es necesario proporcionar una solución de monitoreo para registrar el funcionamiento y el rendimiento del sistema.
+Uso de herramientas de monitoreo y analisis de: logs, recursos, trafico, metricas, etc.
+
+## Advantages
+
+- **Desarrollo independiente:** todos los microservicios se pueden desarrollar fácilmente en función de su funcionalidad individual.
+
+- **Despliegue independiente:** según sus servicios, se pueden implementar individualmente en cualquier aplicación.
+
+- **Tolerancia a fallas/Resiliencia:** Un error solo afectará a al servicio en el que ocurre, pero no afectará toda la aplicación.
+
+- **Stack de tecnología mixta:** Permiten adaptarse fácilmente y aprovechar las últimas tecnologías emergentes. Se pueden usar diferentes lenguajes, bases de datos para construir diferentes servicios de la misma aplicación.
+
+- **Escalado granular:** Los componentes individuales se pueden escalar según sus necesidades, no es necesario escalar todos los componentes juntos.
+
+
+Otros Beneficios:
+
+Mayor velocidad de desarrollo
+Soporte al desarrollo iterativo/incremental.
+Aprovecha las ventajas del software moderno - Ecosistema de desarrollo (Cloud, Containers, DevOps, Serverless).
+Equipos flexibles, los diferentes microservicios requieren diferentes equipos de desarrolladores, tanto en tamaño como en estructura.
+
+
 
 
 ## Design Patterns for Microservices

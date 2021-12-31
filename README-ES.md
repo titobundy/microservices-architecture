@@ -269,11 +269,15 @@ A diferencia de una arquitectura monolitica, hemos distribuido las funcionalidad
 
 Las arquitecturas de microservicios se caracterizan por lo que se llama _dumb pipes_ (tuberías tontas), es decir, que es en los puntos finales donde reside toda la inteligencia y no debe invertirse esfuerzo en complicados mecanismos de comunicación que no aportan ningún valor al sistema y sí que supone un incremento considerable de la complejidad. Por ello, es preferible optar por mecanismos de comunicación ligeros y simples (dumb pipes).
 
+---
+
 **Comunicacion Directa**
 
 En teoría, un cliente puede lanzar peticiones directas a cualquiera de los microservicios, ya que cada uno de ellos expone un endpoint (punto de acceso) público. Sin embargo esto trae problemas como la variedad de clientes con distintas capacidades, protocolos no orientados a la web (AMQP mensajeria).
 
 Para resolver éste y otros problemas relacionados se prefiere un esquema en el que un intermediario central se encargue de adaptar las llamadas a los microservicios (y sus respuestas) a distintos tipos de clientes, proporcionando API de la granularidad adecuada. Este intermediario es lo que se conoce como API Gateway.
+
+---
 
 **API Gateway**
 

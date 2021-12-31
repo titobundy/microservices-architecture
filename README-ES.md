@@ -135,7 +135,7 @@ Al tener mayor número de componentes, su operación es más compleja, por lo qu
 
 - **Pruebas de integración:** Probar microservicios puede ser engorroso y complicado debido a su naturaleza distribuida.
 
-- **Complejidad operativa:** Cada servicio es más simple, pero todo el sistema es más complejo. La gestión de múltiples bases de datos y transacciones puede ser realmente engorrosa. El problema de la complejidad operativa puede resolverse parcialmente mediante la implementación de nuevas herramientas de gestión de la configuración (por ejemplo, Docker, Ansible).
+- **Complejidad operativa:** Cada servicio es simple, pero como un todo el sistema es más complejo. La gestión de múltiples bases de datos y transacciones puede ser realmente engorrosa. El problema de la complejidad operativa puede resolverse parcialmente mediante la implementación de nuevas herramientas de gestión de la configuración (por ejemplo, Docker, Ansible).
 
 - **Problemas de red y latencia:** Debido a que los microservicios utilizan un tipo de comunicación inter-service (a través de la red) las peticiones pueden fallar y provocar un retraso, debemos mitigar la tolerancia a fallas, la latencia de la red y lidiar con una variedad de formatos de mensajes, así como con el equilibrio de carga. Si llamamos a la cadena de servicios para una solicitud particular, esto aumentará los problemas de latencia y necesitará un diseño correcto de las API para una comunicación adecuada.
 
@@ -177,7 +177,11 @@ Uso de herramientas de monitoreo y analisis de: logs, recursos, trafico, metrica
 
 ## Design Patterns for Microservices
 
-Business Requirements
+La aplicación de los principios conlleva varios desafíos y problemas, problemas que son comunes para muchas soluciones. Por lo que podemos superar estos desafios con el uso de patrones de diseño adecuados.
+
+Podemos categorizar los patrones de microservicios en 5 tipos, cada uno con varios patrones.
+
+**Business Requirements**
 
 Aquí estamos hablando de la colección de requerimientos en torno a una capacidad empresarial específica. Necesitamos identificar varias capacidades de negocio del sistema y comprender cuáles son los requerimientos.
 

@@ -181,15 +181,13 @@ La aplicación de los principios conlleva varios desafíos y problemas, problema
 
 Podemos categorizar los patrones de microservicios en 5 tipos, cada uno con varios patrones.
 
-**Business Requirements**
-
-Aquí estamos hablando de la colección de requerimientos en torno a una capacidad empresarial específica. Necesitamos identificar varias capacidades de negocio del sistema y comprender cuáles son los requerimientos.
-
 ---
 
 ### Decomposition Patterns
 
-Los microservicios son piezas de software que deben hacer cumplir con una función específica, preferiblemente cumpliendo con el principio de responsabilidad única (SRP); definir los límites no es tan sencillo y requiere de un detallado análisis. No existe un proceso exacto que siguiendo una lista de pasos nos ayude a diseñar microservicios coherentes.
+Para desarrollar una aplicación grande y compleja usando la arquitectura de microservicios, necesitamos descomponer la aplicación en un conjunto de microservicios débilmente acoplados de una manera detallada y razonable. El objetivo de la arquitectura de microservicio es acelerar el desarrollo de software logrando una entrega/implementación continua.
+
+Los microservicios son piezas de software que deben hacer cumplir con una función específica, preferiblemente cumpliendo con el principio de responsabilidad única (SRP); definir los límites no es tan sencillo y requiere de un detallado análisis. No existe un proceso exacto que siguiendo una lista de pasos nos ayude a diseñar microservicios de forma coherente.
 
 Una de las claves de los microservicios es mantener servicios desacoplados, independientes de forma tal que se facilite su puesta en operación y reducir su tiempo de entrada al mercado (time-to-market)
 
@@ -197,16 +195,19 @@ Una de las claves de los microservicios es mantener servicios desacoplados, inde
 
 #### By Business Capability
 
-En este patrón se modelan los microservicios acorde a las capacidades empresariales del negocio, enfocado en los
-elementos que aportan valor, por ejemplo, en una empresa de venta de suministros existe comúnmente un área de productos, venta, entrega, demanda, entre otras.
+En este patrón se definen y modelan los microservicios acorde a las capacidades empresariales del negocio, enfocado en los elementos que aportan valor, por ejemplo, en una tienda online, existe comúnmente un área de productos, venta, entrega, pedidos, entre otras.
 
 Llevando esto a capacidades del negocio puede traducirse en:
 	- Gestión de productos.
-	- Gestión de ventas
-	- Gestión de entregas.
-	- Gestión de demanda.
+	- Gestión de inventario.
+	- Gestión de pedidos.
+	- Gestión de entregas.	
 
 Existe una relación entre el negocio y los posibles microservicios que podemos crear para soportar la automatización.
+
+**Business Requirements**
+
+Aquí estamos hablando de la colección de requerimientos en torno a una capacidad empresarial específica. Necesitamos identificar varias capacidades de negocio del sistema y comprender cuáles son los requerimientos.
 
 ---
 
@@ -247,6 +248,8 @@ definir las entidades, los agregados y los servicios de dominio.
 A partir de la evolución de las arquitecturas, y especialmente con la llegada de los microservicios muchas aplicaciones inician un proceso de migración; el tamaño de los monolitos hace que ese proceso sea lento y gradual, surgiendo la necesidad de lograr una convivencia entre el viejo sistema y los nuevos servicios que se
 van creando paulatinamente.
 
+El patrón de estrangulación permite sustituir una aplicación heredada reemplazando de forma gradual y con menos riesgos, reemplazando piezas específicas de funcionalidad por nuevas aplicaciones y servicios. 
+
 Este patrón ayuda a minimizar el riesgo de la migración y distribuye el esfuerzo de desarrollo a lo largo del tiempo.
 
 Para lograr que el sistema legado funcione y cada uno de los microservicios que se van creando realice su tarea particular es necesario definir un mecanismo que sirva de fachada para las aplicaciones clientes y dirija el tráfico de las operaciones al ente correspondiente.
@@ -258,6 +261,33 @@ La fachada que se crea implementa una capa transparente para los clientes.
 ### Microservices Communications
 
 #### Sync/Async Communication
+
+El cliente y los servicios pueden comunicarse a través de muchos tipos diferentes de comunicación, cada uno destinado a un escenario y unos objetivos distintos. Inicialmente, esos tipos de comunicaciones se pueden clasificar en dos ejes.
+
+**Synchronous communication**
+
+La comunicación síncrona es la solución más sencilla cuando se intenta que los servicios se comuniquen. Como una llamada telefónica, el cliente envía una solicitud y espera una respuesta.
+
+En el procesamiento sincrónico, un cliente envía una solicitud al servidor y espera a que el servidor complete su trabajo y envíe la respuesta antes de que el cliente pueda reanudar su trabajo.
+
+A una solicitud sincrona se le denomina solicitud de bloqueante, ya que el cliente no puede realizar ningún otro trabajo hasta que se recibe una respuesta.
+
+Protocolos: Se usa principalmente con los protolcos HTPP(S), API Restful, GraphQL, gRCP (Http 2 los servidios son definidos usando un protocolo de buffer).
+
+**Asynchronous communication**
+
+Es lo opuesto al procesamiento asincrono, aquí el cliente del mensaje no espera ninguna respuesta después de enviar una solicitud al servidor y continúa haciendo cualquier otro trabajo.
+
+A este proceso se le conoce como no bloqueante, ya que el hilo de ejecución del cliente no está bloqueado. Esto permite que los sistemas escalen ya que se puede realizar más trabajo en un período de tiempo determinado.
+
+La comunicación mediante mensajería asíncrona se usa, fundamentalmente, para la comunicación entre los distintos microservicios a través de un intermediario de mensajes o bróker, de tal manera que los productores de mensajes van colocándolos en una cola distribuida de la que los consumidores van recuperando. De este modo, productor y consumidor quedan totalmente desacoplados.
+
+El protocolo más popular para estas comunicaciones asíncronas es AMQP (Protocolo avanzado de cola de mensajes). Así, con el uso de protocolos AMQP, el cliente envía el mensaje usando sistemas de mensajería tales como Kafka  RabbitMQ.
+
+Un sistema de comunicación asincrona puede dividirse en 2, de acuerdo a su implementación, dependiendo si tiene un único receptos o varios.
+
+- One-to-one(queue) mode:  Cada solicitud debe ser procesada por un receptor o servicio exactamente. (Command Pattern)
+- One-to-many (topic) mode: Cada solicitud puede ser procesada por cero y varios receptores. (publish/subscribe)
 
 ---
 
@@ -273,7 +303,17 @@ Las arquitecturas de microservicios se caracterizan por lo que se llama _dumb pi
 
 **Comunicacion Directa**
 
-En teoría, un cliente puede lanzar peticiones directas a cualquiera de los microservicios, ya que cada uno de ellos expone un endpoint (punto de acceso) público. Sin embargo esto trae problemas como la variedad de clientes con distintas capacidades, protocolos no orientados a la web (AMQP mensajeria).
+En teoría, un cliente puede lanzar peticiones directas a cualquiera de los microservicios, ya que cada uno de ellos expone un endpoint (punto de acceso) público. Sin embargo esto trae problemas como la variedad de clientes con distintas capacidades, protocolos no orientados a la web (AMQP mensajeria), los clientes tienen que administrar multiples llamadas, incremento de latencia, complejidad adicional en el lado UI.
+
+Una arquitectura de comunicación directa de cliente a microservicio podría ser suficiente para una pequeña aplicación basada en microservicio. Sin embargo, cuando creamos aplicaciones basadas en microservicios grandes y complejas y, sobre todo, cuando las aplicaciones cliente son aplicaciones móviles remotas o aplicaciones web SPA, este enfoque se enfrenta a algunos problemas.
+
+- ¿Cómo pueden las aplicaciones cliente minimizar el número de solicitudes al back-end y reducir el exceso de comunicación con varios microservicios?
+
+- ¿Cómo se pueden controlar cuestiones transversales como la autorización, las transformaciones de datos y la distribución de solicitudes dinámicas?
+
+- ¿Cómo pueden las aplicaciones cliente comunicarse con servicios que usan protocolos no compatible con Internet?
+
+- ¿Cómo se puede dar forma a una fachada creada especialmente para las aplicaciones móviles?
 
 Para resolver éste y otros problemas relacionados se prefiere un esquema en el que un intermediario central se encargue de adaptar las llamadas a los microservicios (y sus respuestas) a distintos tipos de clientes, proporcionando API de la granularidad adecuada. Este intermediario es lo que se conoce como API Gateway.
 

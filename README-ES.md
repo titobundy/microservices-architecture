@@ -302,7 +302,7 @@ Las arquitecturas de microservicios se caracterizan por lo que se llama _dumb pi
 
 ---
 
-**Comunicacion Directa**
+**Direct Communication**
 
 En teoría, un cliente puede lanzar peticiones directas a cualquiera de los microservicios, ya que cada uno de ellos expone un endpoint (punto de acceso) público. Sin embargo esto trae problemas como la variedad de clientes con distintas capacidades, protocolos no orientados a la web (AMQP mensajeria), los clientes tienen que administrar multiples llamadas, incremento de latencia, complejidad adicional en el lado UI.
 

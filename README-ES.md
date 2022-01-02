@@ -260,11 +260,11 @@ La fachada que se crea implementa una capa transparente para los clientes.
 
 ### Microservices Communications
 
-#### Sync/Async Communication
-
 El cliente y los servicios pueden comunicarse a través de muchos tipos diferentes de comunicación, cada uno destinado a un escenario y unos objetivos distintos. Inicialmente, esos tipos de comunicaciones se pueden clasificar en dos ejes.
 
-**Synchronous communication**
+---
+
+#### Synchronous communication
 
 La comunicación síncrona es la solución más sencilla cuando se intenta que los servicios se comuniquen. Como una llamada telefónica, el cliente envía una solicitud y espera una respuesta.
 
@@ -274,7 +274,9 @@ A una solicitud sincrona se le denomina solicitud de bloqueante, ya que el clien
 
 Protocolos: Se usa principalmente con los protolcos HTPP(S), API Restful, GraphQL, gRCP (Http 2 los servidios son definidos usando un protocolo de buffer).
 
-**Asynchronous communication**
+---
+
+#### Asynchronous communication
 
 Es lo opuesto al procesamiento asincrono, aquí el cliente del mensaje no espera ninguna respuesta después de enviar una solicitud al servidor y continúa haciendo cualquier otro trabajo.
 
@@ -290,7 +292,6 @@ Un sistema de comunicación asincrona puede dividirse en 2, de acuerdo a su impl
 - One-to-many (topic) mode: Cada solicitud puede ser procesada por cero y varios receptores. (publish/subscribe)
 
 ---
-
 
 #### Api Gateway Pattern
 

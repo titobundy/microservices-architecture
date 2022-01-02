@@ -185,7 +185,7 @@ Podemos categorizar los patrones de microservicios en 5 tipos, cada uno con vari
 
 ### Decomposition Patterns
 
-Para desarrollar una aplicación grande y compleja usando la arquitectura de microservicios, necesitamos descomponer la aplicación en un conjunto de microservicios débilmente acoplados de una manera detallada y razonable. El objetivo de la arquitectura de microservicio es acelerar el desarrollo de software logrando una entrega/implementación continua.
+Para desarrollar una aplicación grande y compleja usando la arquitectura de microservicios, necesitamos descomponer la aplicación en un conjunto de microservicios débilmente acoplados de una manera detallada y razonable. <mark>El objetivo de la arquitectura de microservicio es acelerar el desarrollo de software logrando una entrega/implementación continua.</mark>
 
 Los microservicios son piezas de software que deben hacer cumplir con una función específica, preferiblemente cumpliendo con el principio de responsabilidad única (SRP); definir los límites no es tan sencillo y requiere de un detallado análisis. No existe un proceso exacto que siguiendo una lista de pasos nos ayude a diseñar microservicios de forma coherente.
 

@@ -14,11 +14,17 @@ https://en.wikipedia.org/wiki/Service_(systems_architecture)
 
 ### Microservices
 
-From Martin Fowlers Microservices article;
-The microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP or gRPC API.
+Martin Fowlers
+
+*"The microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP or gRPC API."*
+
+*"La arquitectura de microservicios son un enfoque para desarrollar una única aplicación como un conjunto de pequeños servicios, cada uno ejecutándose en su propio proceso y comunicándose con mecanismos ligeros, a menudo una API a través de HTTP.*
 
 Sam Newman
-Microservices are small, autonomous services that work together modelled around a business domain. Let’s break that definition down a bit and consider the characteristics that make microservices different.
+
+*"Microservices are small, autonomous services that work together modelled around a business domain."*
+
+*"Microservicios son pequeños servicios, autonomos que trabajan juntos y son modelados alrededor del dominio de negocio."*
 
 ---
 

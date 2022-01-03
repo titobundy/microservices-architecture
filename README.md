@@ -1,6 +1,12 @@
 
 # Microservices Architecture
 
+## What is a service ?
+
+According to the [OASIS definition], a service is a mechanism that enables access to one or more capabilities, where the access is provided using a prescribed interface and is exercised consistent with constraints and policies as specified by the service description. 
+
+In our case, these capabilities might be executing commands, querying, or raising events. All of them make up a service’s public interface.
+
 ## Definition
 
 Martin Fowlers
@@ -10,12 +16,6 @@ Martin Fowlers
 Sam Newman
 
 *"Microservices are small, autonomous services that work together modelled around a business domain."*
-
-## What is a service ?
-
-According to the [OASIS definition], a service is a mechanism that enables access to one or more capabilities, where the access is provided using a prescribed interface and is exercised consistent with constraints and policies as specified by the service description. 
-
-In our case, these capabilities might be executing commands, querying, or raising events. All of them make up a service’s public interface.
 
 ## Representation
 

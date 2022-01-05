@@ -4,7 +4,7 @@
 
 ### Service
 
-Según OASIS (Organization for the Advancement of Structured Information Standards), se entiende por servicio “un mecanismo que permite el acceso a una o más capacidades, donde el acceso es través interfaz”
+Según OASIS (Organization for the Advancement of Structured Information Standards), se entiende por servicio “un mecanismo que permite el acceso a una o más capacidades, donde el acceso es través de una interfaz”
 
 Por lo tanto, un servicio es una funcionalidad o un conjunto de funcionalidades de software, con el objetivo de que pueda ser reutilizado por distintos clientes con propósitos distintos, junto con las políticas que deben controlar su uso.
 

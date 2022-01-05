@@ -113,7 +113,7 @@ En la figura:
 
 - Diferentes clientes desde diferentes dispositivos intentan utilizar diferentes servicios.
 - Todos los servicios se separan en función de sus dominios y funcionalidades y se asignan a microservicios individuales.
-- Todos los microservicios se comunican entre sí a través de un servidor sin estado como pueden ser APIS REST o un un Bus de mensajes.
+- Todos los microservicios se comunican entre sí a través protocolos sin estado como pueden ser APIS REST o un un Bus de mensajes.
 - Las funcionalidades expuestas por los microservicios son accedidas por los clientes son a través de un API Gateway.
 
 ---
